@@ -1,6 +1,6 @@
 # bspwm-dotfiles
 
-A Basic collection of dotes used for this post - https://www.reddit.com/r/unixporn/comments/ciuty9/bspwm_night_king/
+A Basic collection of dotfiles used for this post - https://www.reddit.com/r/unixporn/comments/ciuty9/bspwm_night_king/
 
 ## Some Details
 
