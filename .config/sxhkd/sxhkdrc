@@ -1,0 +1,181 @@
+##########################
+# wm independent hotkeys #
+##########################
+
+# Terminal emulator
+super + Return
+	urxvt
+
+# Terminal emulator 2
+super + shift + Return
+	xfce4-terminal
+
+# Program launcher
+super + @space
+	rofi -show drun -theme ~/.config/rofi/base16-dracula.rasi
+
+## Music Player
+super + {_,shift + }m
+	urxvt -e ncmpcpp {-S visualizer &, &}
+
+## Files (thunar)
+super + f
+	thunar
+
+## Browser (Chrome)
+super +  {_,shift + }c
+	{google-chrome-stable, chromium}
+
+## Code (VScode)
+super + v
+	code
+
+## Spotify
+super + s
+	spotify
+
+#################
+# bspwm hotkeys #
+#################
+
+## Make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+## Restart bspwm
+# ?
+
+## Quit bspwm normally
+super + control + Escape
+	bspc quit
+
+## Close or kill app
+super + {_,shift + }x
+	bspc node {-c,-k}
+
+## Close app (common way)
+alt + F4
+	bspc node -c
+
+## Lock Screen
+super + l
+	betterlockscreen -l
+
+## Volume control
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
+
+## mpd control
+super + {comma,period}
+	mpc {prev,next}
+super + {_,shift +,ctrl +}{slash}
+	mpc {pause, play, stop}
+# XF86Audio{Next,Prev,Play,Stop}
+# 	mpc {next,prev,toggle,stop}
+
+###############
+# state/flags #
+###############
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
+## Monocle (zen mode)
+super + z
+	bspc desktop -l next
+
+## Toggle beetwen floating & tiled
+super + t
+    bspc node -t "~"{floating,tiled}
+
+## Toggle beetwen psuedo_tiled & tiled
+super + p
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+##############
+# focus/swap #
+##############
+
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {desktop,node} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#############
+# preselect #
+#############
+
+# preselect the direction
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+super + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + alt + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + alt + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#############
+# SreenShot #
+#############
+
+# Screenshot
+Print
+  scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot ' && notify-send 'Screenshot captured'
+
+shift + Print
+  scrot --select '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot ' && notify-send 'Screenshot captured'
+
+###############
+# move/resize #
+###############
+
+# expand a window by moving one of its side outward
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {Left,Down,Up,Right}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

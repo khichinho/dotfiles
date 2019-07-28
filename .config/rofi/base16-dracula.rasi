@@ -1,0 +1,148 @@
+/**
+ * Base16 Dracula ROFI Color theme
+ *
+ * Authors
+ *  Scheme: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+ *  Template: Jordi Pakey-Rodriguez (https://github.com/0xdec), Andrea Scarpino (https://github.com/ilpianista)
+ */
+
+* {
+    red:                         #FF5555; 
+    /**rgba ( 255, 85, 85, 100 % );
+    */
+    blue:                        rgba ( 189, 147, 249, 100 % );
+    lightfg:                     rgba ( 248, 248, 242, 100 % );
+    lightbg:                     rgba ( 77, 77, 77, 100 % );
+    foreground:                  rgba ( 248, 248, 242, 100%);
+    background:                  rgba ( 30, 31, 40, 100%);
+    background-color:            rgba ( 30, 31, 40, 100%);
+    cyan:                        rgba ( 139, 233, 253, 100%);
+    separatorcolor:              @blue;
+    border-color:                @red;
+    selected-normal-foreground:  @lightbg;
+    selected-normal-background:  @lightfg;
+    selected-active-foreground:  @background;
+    selected-active-background:  @blue;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @red;
+    normal-foreground:           @foreground;
+    normal-background:           @background;
+    active-foreground:           @blue;
+    active-background:           @background;
+    urgent-foreground:           @red;
+    urgent-background:           @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: rgba ( 55, 55, 55, 100 % );
+    alternate-active-foreground: @blue;
+    alternate-active-background: @lightbg;
+    alternate-urgent-foreground: @red;
+    alternate-urgent-background: @lightbg;
+    spacing:                     6;
+}
+window {
+    background-color: @background;
+    border:           6;
+    padding:          6;
+}
+mainbox {
+    border:  0;
+    padding: 12;
+}
+message {
+    border:       4px 4px 4px ;
+    border-color: @separatorcolor;
+    padding:      20 ;
+}
+textbox {
+    text-color:       @foreground;
+}
+listview {
+    fixed-height:     0;
+    border:           6px dash 0px 0px ;
+    border-color:     @separatorcolor;
+    spacing:          6px ;
+    scrollbar:        true;
+    padding:          6px 0px 0px ;
+}
+element {
+    border:           0;
+    padding:          6px ;
+}
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+scrollbar {
+    width:            6px ;
+    border:           0;
+    handle-color:     @normal-foreground;
+    handle-width:     12px ;
+}
+sidebar {
+    border:           6px dash 0px 0px ;
+    border-color:     @separatorcolor;
+}
+button {
+    spacing:          0;
+    text-color:       @normal-foreground;
+}
+button selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+inputbar {
+    spacing:          6px;
+    text-color:       @normal-foreground;
+    padding:          6px ;
+    children:         [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+case-indicator {
+    spacing:          0;
+    text-color:       @normal-foreground;
+}
+entry {
+    spacing:          0;
+    text-color:       @normal-foreground;
+}
+prompt {
+    spacing:          0;
+    text-color:       @normal-foreground;
+}
+textbox-prompt-colon {
+    expand:           false;
+    str:              ":";
+    margin:           0px 0.3000em 0.0000em 0.0000em ;
+    text-color:       inherit;
+}

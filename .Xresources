@@ -1,0 +1,57 @@
+! ██╗░░██╗██████╗░███████╗███████╗░██████╗░██╗░░░██╗██████╗░░██████╗███████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║░░░██║██╔══██╗██╔════╝██╔════╝██╔════╝
+! ░╚███╔╝░██████╔╝█████╗░░███████╗██║░░░██║██║░░░██║██████╔╝██║░░░░░█████╗░░███████╗
+! ░██╔██╗░██╔══██╗██╔══╝░░╚════██║██║░░░██║██║░░░██║██╔══██╗██║░░░░░██╔══╝░░╚════██║
+! ██╔╝░██╗██║░░██║███████╗███████║╚██████╔╝╚██████╔╝██║░░██║╚██████╗███████╗███████║
+! ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝░╚═════╝╚══════╝╚══════╝
+!
+! -----------------------------------
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+
+! ======= colors ==========
+*.foreground: #F8F8F2
+*.background: #1e1f28
+*.cursorColor:#57c7ff
+
+!!! black dark/light
+*.color0:     #000000
+*.color8:     #4D4D4D
+
+!!! red dark/light
+*.color1:     #FF5555
+*.color9:     #FF6E67
+
+!!! green dark/light
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+ 
+!!! yellow dark/light
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+ 
+!!! blue dark/light
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+ 
+!!! magenta dark/light
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+ 
+!!! cyan dark/light
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+ 
+!!! white dark/light
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6
+
+! ===== urxvt =====
+URxvt.scrollBar: off
+URxvt.font: xft:Iosevka:size=12
+URxvt.internalBorder:     30
+
+URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
